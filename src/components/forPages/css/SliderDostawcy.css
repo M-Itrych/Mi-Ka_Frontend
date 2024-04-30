@@ -1,0 +1,21 @@
+.slider-section{
+    max-width: 100%;
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 5rem 12.5rem;
+    width: 100%;
+    background-color: #FFF;
+    h2 {
+        text-align: center;
+        margin-bottom: 2rem;
+    }
+
+}
+
+.slider-link{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}

@@ -3,6 +3,7 @@ import Footer from "../components/global/Footer";
 import NavBar from "../components/global/NavBar";
 import placeholder from "./img/img-placeholder.png";
 import "./css/Offer.css";
+import SliderDostwacy from "../components/forPages/SliderDostawcy";
 
 const Offer = () => {
   const OfferArr = [
@@ -69,6 +70,7 @@ const Offer = () => {
 	  </div>
     </section>
     </main>
+    <SliderDostwacy />
     <Footer />
   </>
 )};
