@@ -6,6 +6,7 @@ import placeholder from "./img/img-placeholder.png";
 import "./css/Home.css";
 import NewsTile from "../components/forPages/NewsTile";
 import Contact from "../components/global/Contact";
+import SliderDostawcy from "../components/forPages/SliderDostawcy";
 
 const Home = () => (
   <>
@@ -123,6 +124,7 @@ const Home = () => (
         <a href="/news">Przejdź do archiwum</a>
       </section>
     </main>
+    <SliderDostawcy />
     <Contact bg={true} />
     <Footer />
   </>

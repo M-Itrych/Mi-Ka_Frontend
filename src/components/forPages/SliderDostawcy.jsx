@@ -15,9 +15,9 @@ const SliderDostawcy = () => {
     pauseOnHover: false,
     responsive: [
       {
-        breakpoint: 1025,
+        breakpoint: 1200,
         settings: {
-          slidesToShow: 5,
+          slidesToShow: 3,
           slidesToScroll: 1,
           infinite: true,
         },
