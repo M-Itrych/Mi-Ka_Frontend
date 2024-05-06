@@ -5,8 +5,14 @@ const AdminLogin = () => {
 	let [showPassword, setShowPassword] = useState(false);
 	return (
 		<>
-			<main>
-				<form method='POST' onSubmit={(e) => e.preventDefault}>
+			<main className='admin-main'>
+				<form
+					// method='POST'
+					onSubmit={() => {
+						setTimeout(() => {
+							window.location.href = "/admin/dashboard";
+						}, 300);
+					}}>
 					<section>
 						<label htmlFor='login'>
 							<span>Login</span>
