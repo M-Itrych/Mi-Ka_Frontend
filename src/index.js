@@ -8,6 +8,7 @@ import News from "./pages/News";
 import OfferId from "./pages/OfferId";
 import ContactPage from "./pages/ContactPage";
 import About from "./pages/About";
+import AdminLogin from './pages/Admin/AdminLogin';
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
@@ -19,6 +20,7 @@ root.render(
       <Route path="/about" element={<About />} />
       <Route path="/contact" element={<ContactPage />} />
       <Route path="/offer/:id" element={<OfferId />} />
+      <Route path="/admin/login" element={<AdminLogin />} />
     </Routes>
   </BrowserRouter>
 );
