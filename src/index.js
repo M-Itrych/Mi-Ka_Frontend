@@ -9,6 +9,8 @@ import OfferId from "./pages/OfferId";
 import ContactPage from "./pages/ContactPage";
 import About from "./pages/About";
 import AdminLogin from './pages/Admin/AdminLogin';
+import AdminDashboardNews from './pages/Admin/AdminDashboardNews';
+import AdminDashboard from './pages/Admin/AdminDashboard';
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
@@ -21,6 +23,8 @@ root.render(
       <Route path="/contact" element={<ContactPage />} />
       <Route path="/offer/:id" element={<OfferId />} />
       <Route path="/admin/login" element={<AdminLogin />} />
+      <Route path="/admin/dashboard" element={<AdminDashboard />} />
+      <Route path="/admin/dashboard/news" element={<AdminDashboardNews />} />
     </Routes>
   </BrowserRouter>
 );

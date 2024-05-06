@@ -1,0 +1,6 @@
+main {
+    height: 100svh;
+    form {
+    display: flex;
+    flex-direction: column;
+}}
