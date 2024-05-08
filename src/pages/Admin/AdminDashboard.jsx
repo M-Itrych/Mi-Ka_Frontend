@@ -12,6 +12,7 @@ const AdminDashboard = () => {
     <main className="admin-main">
       <div className="admin-dashboard-grid">
 		<AdminGoTo path={"/admin/dashboard/news"} text={"Dodawanie Aktualności"}/>
+		<AdminGoTo path={"/admin/dashboard/news"} text={"Edycja Aktualności"}/>
       </div>
     </main>
   );

@@ -7,7 +7,8 @@
 	color: rgb(209, 209, 209);
     .admin-dashboard-grid {
         display: grid;
-        grid-auto-flow: column;
+        grid-template-columns: repeat(1fr, 1);
+		gap: 1rem;
         a {
             background-color: whitesmoke;
             padding: 0.25rem 0.5rem;
@@ -15,6 +16,7 @@
             cursor: pointer;
             transition: all 0.3s;
 			color: #000;
+			text-align: center;
             &:hover, &:active {
                 padding: 0.5rem 0.75rem;
                 background-color: antiquewhite;
