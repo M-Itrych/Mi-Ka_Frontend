@@ -1,8 +1,12 @@
-import "../css/Admin/AdminLogin.css";
+import "../css/Admin/Admin.css";
+import AdminGoTo from "./AdminGoTo";
 
-const AdminDashboardNews = () => (
+
+const AdminDashboardNews = () => {
+	return(
 	<main className='admin-main'>
 		<form method='POST' action=''>
+			<AdminGoTo path={"/admin/dashboard/"} />
 			<label htmlFor='img'>
 				<span>Zdjęcie</span>
 				<input type='file' name='img' id='img' />
@@ -24,6 +28,6 @@ const AdminDashboardNews = () => (
 			</button>
 		</form>
 	</main>
-);
+)};
 
 export default AdminDashboardNews;

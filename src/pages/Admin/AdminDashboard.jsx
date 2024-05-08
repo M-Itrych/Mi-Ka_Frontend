@@ -1,4 +1,5 @@
 import { useNavigate } from "react-router-dom";
+import AdminGoTo from "./AdminGoTo";
 
 const AdminDashboard = () => {
   const navigate = useNavigate();
@@ -10,7 +11,7 @@ const AdminDashboard = () => {
   return (
     <main className="admin-main">
       <div className="admin-dashboard-grid">
-        <a onClick={goToNewsUpd}>Panel Edycji Aktualności</a>
+		<AdminGoTo path={"/admin/dashboard/news"} text={"Dodawanie Aktualności"}/>
       </div>
     </main>
   );

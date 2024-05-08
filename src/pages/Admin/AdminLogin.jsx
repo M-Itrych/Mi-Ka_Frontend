@@ -1,5 +1,5 @@
 import { Navigate } from "react-router-dom";
-import "../css/Admin/AdminLogin.css";
+import "../css/Admin/Admin.css";
 import { useState } from "react";
 
 const AdminLogin = ({ updateLoginStatus }) => {
