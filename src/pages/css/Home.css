@@ -222,7 +222,7 @@
     .home-news-tiles {
       grid-template-columns: repeat(2, 1fr);
     }
-    .home-news-tiles > *:last-child {
+    .home-news-tiles > *:nth-last-child(n+3){
       display: none;
     }
   }

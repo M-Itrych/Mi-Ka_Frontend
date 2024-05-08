@@ -12,7 +12,7 @@ const OfferId = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const res = await fetch('http://127.0.0.1:5000/api/ofers/'+id);
+        const res = await fetch('http://127.0.0.1:5000/api/offers/'+id);
         if (!res.ok) {
           throw new Error('Network response was not ok');
         }

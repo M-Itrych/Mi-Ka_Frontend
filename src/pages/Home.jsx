@@ -16,7 +16,7 @@ const Home = () => {
   useEffect(() => {
     const fetchOffers = async () => {
       try {
-        const res = await fetch("http://127.0.0.1:5000/api/ofers");
+        const res = await fetch("http://127.0.0.1:5000/api/offers");
         if (!res.ok) {
           throw new Error("Network response was not ok");
         }
@@ -46,6 +46,8 @@ const Home = () => {
     };
     fetchData();
   }, []);
+
+  console.log(news)
   return (
     <>
       <NavBar />

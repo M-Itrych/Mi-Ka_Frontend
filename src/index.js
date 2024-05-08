@@ -11,6 +11,7 @@ import About from "./pages/About";
 import AdminLogin from './pages/Admin/AdminLogin';
 import AdminDashboardNews from './pages/Admin/AdminDashboardNews';
 import AdminDashboard from './pages/Admin/AdminDashboard';
+import NewsId from "./pages/NewsId";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
@@ -22,7 +23,8 @@ root.render(
       <Route path="/about" element={<About />} />
       <Route path="/contact" element={<ContactPage />} />
       <Route path="/offer/:id" element={<OfferId />} />
-      <Route path="/admin/login" element={<AdminLogin />} />
+      <Route path="/news/:id" element={<NewsId />} />
+      <Route path="/admin" element={<AdminLogin />} />
       <Route path="/admin/dashboard" element={<AdminDashboard />} />
       <Route path="/admin/dashboard/news" element={<AdminDashboardNews />} />
     </Routes>
