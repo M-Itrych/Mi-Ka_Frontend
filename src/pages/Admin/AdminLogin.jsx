@@ -29,7 +29,7 @@ const AdminLogin = ({ updateLoginStatus }) => {
         updateLoginStatus(true);
         setRedirectToDashboard(true);
       } else {
-        console.error("Authentication failed:", responseData.error);
+        alert("Zły Login/Hasło");
       }
     } catch (error) {
       console.error("Error fetching data:", error);
