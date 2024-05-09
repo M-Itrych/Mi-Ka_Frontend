@@ -2,7 +2,6 @@ import HomeOfferTile from "../components/forPages/HomeOfferTile";
 import Footer from "../components/global/Footer";
 import NavBar from "../components/global/NavBar";
 import home_welcome from "./img/home-welcome.png";
-import placeholder from "./img/img-placeholder.png";
 import "./css/Home.css";
 import NewsTile from "../components/forPages/NewsTile";
 import Contact from "../components/global/Contact";

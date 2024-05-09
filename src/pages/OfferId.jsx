@@ -4,6 +4,7 @@ import Footer from "../components/global/Footer";
 import ImgText from "../components/forPages/ImgText";
 import "./css/OfferId.css";
 import { useEffect, useState } from "react";
+import axios from "axios";
 
 const OfferId = () => {
   const [data, setData] = useState();
@@ -60,7 +61,7 @@ const OfferId = () => {
                     reverse={!(i % 2)}
                   />
                 );
-              } else return;
+              } else return <></>;
             })}
           </div>
         )}

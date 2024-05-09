@@ -1,10 +1,10 @@
 import OfferTile from "../components/forPages/OfferTile";
 import Footer from "../components/global/Footer";
 import NavBar from "../components/global/NavBar";
-import placeholder from "./img/img-placeholder.png";
 import "./css/Offer.css";
 import SliderDostwacy from "../components/forPages/SliderDostawcy";
 import { useEffect, useState } from "react";
+import axios from "axios";
 
 const Offer = () => {
   const [data, setData] = useState();

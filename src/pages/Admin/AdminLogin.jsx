@@ -1,7 +1,7 @@
 import { Navigate } from "react-router-dom";
 import "../css/Admin/Admin.css";
 import { useState } from "react";
-import axios, { AxiosError } from "axios";
+import axios from "axios";
 
 const AdminLogin = () => {
   let [showPassword, setShowPassword] = useState(false);
@@ -9,7 +9,7 @@ const AdminLogin = () => {
 
   const handleSubmit = async (event) => {
     event.preventDefault();
-    localStorage.removeItem("token");
+    localStorage.removeItem("token")
     const formData = new FormData(event.target);
 
     const login = formData.get("login");
@@ -38,7 +38,7 @@ const AdminLogin = () => {
   };
 
   if (redirectToDashboard) {
-    return <Navigate to="/admin/dashboard" />;
+    return <Navigate to="/admin/dashboard"/>;
   }
 
   return (

@@ -130,6 +130,7 @@ const SliderDostawcy = () => {
               href={e.link}
               target="_blank"
               className="slider-link"
+              rel="noreferrer"
               style={{
                 display: "flex",
                 justifyContent: "center",
