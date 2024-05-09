@@ -1,5 +1,6 @@
 import AdminGoTo from "./AdminGoTo";
 import axios from "axios";
+import config from '../config.json'
 
 const AdminDashboardNews = () => {
     const handleSubmit = async (event) => {
@@ -15,7 +16,7 @@ const AdminDashboardNews = () => {
 
         try {
             const response = await axios.post(
-                "http://127.0.0.1:5000/api/add/news",
+                `${config.apiUrl}/api/add/news`,
                 {
                     url: url,
                     alt: alt,

@@ -4,6 +4,7 @@ import "./css/NewsId.css";
 import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import axios from "axios";
+import config from '../config.json'
 
 const NewsId = () => {
   const [data, setData] = useState();
@@ -13,7 +14,7 @@ const NewsId = () => {
     const fetchData = async () => {
       try {
         const response = await axios.get(
-          `http://127.0.0.1:5000/api/news/${id}`
+          `${config.apiUrl}/api/news/${id}`
         );
 
         if (!response.data) {

@@ -8,6 +8,7 @@ import Contact from "../components/global/Contact";
 import SliderDostawcy from "../components/forPages/SliderDostawcy";
 import { useState, useEffect } from "react";
 import axios from "axios";
+import config from '../config.json'
 
 const Home = () => {
   const [offers, setOffers] = useState();
@@ -17,10 +18,10 @@ const Home = () => {
     const fetchData = async () => {
       try {
         const offersResponse = await axios.get(
-          "http://127.0.0.1:5000/api/offers"
+          `${config.apiUrl}/api/offers`
         );
         const newsResponse = await axios.get(
-          "http://127.0.0.1:5000/api/news?i=3"
+          `${config.apiUrl}/api/news?i=3`
         );
 
         if (!offersResponse.data || !newsResponse.data) {

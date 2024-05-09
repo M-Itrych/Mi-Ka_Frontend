@@ -4,6 +4,7 @@ import NewsTile from "../components/forPages/NewsTile";
 import "./css/News.css";
 import { useEffect, useState } from "react";
 import axios from "axios";
+import config from '../config.json'
 
 const News = () => {
   const [data, setData] = useState();
@@ -11,7 +12,7 @@ const News = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await axios.get("http://127.0.0.1:5000/api/news");
+        const response = await axios.get(`${config.apiUrl}/api/news`);
 
         if (!response.data) {
           throw new Error("No data received");

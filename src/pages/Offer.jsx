@@ -5,6 +5,7 @@ import "./css/Offer.css";
 import SliderDostwacy from "../components/forPages/SliderDostawcy";
 import { useEffect, useState } from "react";
 import axios from "axios";
+import config from '../config.json'
 
 const Offer = () => {
   const [data, setData] = useState();
@@ -12,7 +13,7 @@ const Offer = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await axios.get("http://127.0.0.1:5000/api/offers");
+        const response = await axios.get(`${config.apiUrl}/api/offers`);
 
         if (!response.data) {
           throw new Error("No data received");
