@@ -127,6 +127,7 @@ const Home = () => {
                   title={e.title}
                   desc={e.desc}
                   href={"/news/" + e._id}
+                  img={e.img}
                 />
               ))}
           </div>

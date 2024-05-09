@@ -6,7 +6,7 @@ const AdminGoTo = ({path, text}) => {
   const goToBack = () => {
     navigate(path);
   };
-  return <a onClick={goToBack} href={path}>{!text ? "Powrót" : text}</a>;
+  return <button onClick={goToBack} className="dd-goBackBtn">{!text ? "Powrót" : text}</button>;
 };
 
 export default AdminGoTo;

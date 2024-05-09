@@ -34,18 +34,16 @@ const NewsId = () => {
     return <div>Loading...</div>;
   }
 
-  let textParts = data.text.split("<br />");
-
-  console.log(textParts);
+  let textParts = data.text.split("\n");
 
   return (
     <>
       <NavBar />
       <section className="news-element-section">
         <div className="news-element-card">
-          <img src={data.img.src} alt={data.img.alt} />
+          <img src={data.img.url} alt={data.img.alt} />
           <p className="news-element-date">{data.date}</p>
-          <h2 className="news-element-header">{data.header}</h2>
+          <h2 className="news-element-header">{data.title}</h2>
           <p className="news-element-text">
             {textParts.map((e) => (
               <>

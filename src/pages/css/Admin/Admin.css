@@ -1,15 +1,16 @@
 .admin-main {
-	height: 100svh;
 	display: grid;
+	min-height: 100vh;
 	place-items: center;
 	font-family: "Inter", sans-serif;
 	background-color: rgb(72, 82, 92);
 	color: rgb(209, 209, 209);
+	padding: 5rem;
     .admin-dashboard-grid {
         display: grid;
         grid-template-columns: repeat(1fr, 1);
 		gap: 1rem;
-        a {
+        button {
             background-color: whitesmoke;
             padding: 0.25rem 0.5rem;
             border-radius: 4px;
@@ -17,16 +18,16 @@
             transition: all 0.3s;
 			color: #000;
 			text-align: center;
+			font-size: 2rem;
+			border: none;
             &:hover, &:active {
-                padding: 0.5rem 0.75rem;
                 background-color: antiquewhite;
-                font-weight: 700;
             }
         }
     }
 	form {
 		gap: 1rem;
-		min-width: 15rem;
+		min-width: 30rem;
 		display: flex;
 		flex-direction: column;
 		section {
@@ -34,13 +35,9 @@
 			flex-direction: column;
 			gap: 0.5rem;
 		}
-		a {
-			background-color: aliceblue;
-			color: #000;
+		h2 {
 			text-align: center;
-			border-radius: 2rem;
-			font-weight: 500;
-			font-size: 1.25rem;
+			color: #fff;
 		}
 		label {
 			display: flex;
@@ -87,13 +84,40 @@
 					background-color: rgba(58, 60, 63, 0.452);
 				}
 			}
+			textarea{
+				height: 20rem;
+				padding: 0.5rem 0.5rem;
+				font-size: 1rem;
+				border-radius: 4px;
+				border: none;
+				background-color: rgb(189, 197, 209);
+				&:focus,
+				&:active {
+					background-color: rgb(143, 159, 179);
+					outline: none;
+				}
+			}
 		}
 		.submit {
-			align-self: center;
 			cursor: pointer;
 			padding: 0.25rem 1rem;
 			width: max-content;
 			background-color: var(--brand);
+			transition: all 0.2s;
+			border-radius: 4px;
+			border: none;
+			font-family: "Inter", sans-serif;
+			font-weight: 700;
+			&:hover {
+				background-color: rgb(146, 78, 0);
+				color: #fff;
+			}
+		}
+		.dd-goBackBtn {
+			cursor: pointer;
+			padding: 0.25rem 1rem;
+			width: max-content;
+			background-color: rgb(145, 145, 145);
 			transition: all 0.2s;
 			border-radius: 4px;
 			border: none;
