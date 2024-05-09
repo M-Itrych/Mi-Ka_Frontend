@@ -8,46 +8,37 @@ import NewsTile from "../components/forPages/NewsTile";
 import Contact from "../components/global/Contact";
 import SliderDostawcy from "../components/forPages/SliderDostawcy";
 import { useState, useEffect } from "react";
+import axios from "axios";
 
 const Home = () => {
   const [offers, setOffers] = useState();
   const [news, setNews] = useState();
 
   useEffect(() => {
-    const fetchOffers = async () => {
+    const fetchData = async () => {
       try {
-        const res = await fetch("http://127.0.0.1:5000/api/offers");
-        if (!res.ok) {
-          throw new Error("Network response was not ok");
+        const offersResponse = await axios.get(
+          "http://127.0.0.1:5000/api/offers"
+        );
+        const newsResponse = await axios.get(
+          "http://127.0.0.1:5000/api/news?i=3"
+        );
+
+        if (!offersResponse.data || !newsResponse.data) {
+          throw new Error("Data not found");
         }
-        const jsonData = await res.json();
-        setOffers(jsonData);
+
+        setOffers(offersResponse.data);
+        setNews(newsResponse.data);
       } catch (error) {
         console.log(error);
       }
     };
 
-    const fetchNews = async () => {
-      try {
-        const res = await fetch("http://127.0.0.1:5000/api/news?i=3");
-        if (!res.ok) {
-          throw new Error("Network response was not ok");
-        }
-        const jsonData = await res.json();
-        setNews(jsonData);
-      } catch (error) {
-        console.log(error);
-      }
-    };
-
-    const fetchData = () => {
-      fetchOffers();
-      fetchNews();
-    };
     fetchData();
   }, []);
 
-  console.log(news)
+  console.log(news);
   return (
     <>
       <NavBar />
@@ -136,7 +127,7 @@ const Home = () => {
                   date={e.date}
                   title={e.title}
                   desc={e.desc}
-                  href={"/news/"+e._id}
+                  href={"/news/" + e._id}
                 />
               ))}
           </div>

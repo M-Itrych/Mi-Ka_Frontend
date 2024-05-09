@@ -21,6 +21,8 @@ const App = () => {
     console.log(status)
     setIsLoggedIn(status);
   };
+
+  localStorage.removeItem("token")
   
   return (
     <BrowserRouter>

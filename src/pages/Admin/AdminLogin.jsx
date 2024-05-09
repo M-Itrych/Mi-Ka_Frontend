@@ -1,43 +1,44 @@
 import { Navigate } from "react-router-dom";
 import "../css/Admin/Admin.css";
 import { useState } from "react";
+import axios, { AxiosError } from "axios";
 
-const AdminLogin = ({ updateLoginStatus }) => {
+const AdminLogin = () => {
   let [showPassword, setShowPassword] = useState(false);
   const [redirectToDashboard, setRedirectToDashboard] = useState(false);
 
   const handleSubmit = async (event) => {
     event.preventDefault();
-
+    localStorage.removeItem("token");
     const formData = new FormData(event.target);
 
     const login = formData.get("login");
     const password = formData.get("password");
 
     try {
-      const response = await fetch("http://127.0.0.1:5000/api/login", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-          Authorization: "Basic " + btoa(login + ":" + password),
-        },
-      });
+      const response = await axios.post(
+        "http://127.0.0.1:5000/api/authenticate",
+        null,
+        {
+          headers: {
+            "Content-Type": "application/json",
+            Authorization: "Basic " + btoa(login + ":" + password),
+          },
+        }
+      );
 
-      const responseData = await response.json();
-
-      if (response.ok) {
-        updateLoginStatus(true);
+      if (response.status === 200) {
+        localStorage.setItem("token", "Basic " + btoa(login + ":" + password));
         setRedirectToDashboard(true);
-      } else {
-        alert("Zły Login/Hasło");
       }
     } catch (error) {
-      console.error("Error fetching data:", error);
+      console.error("Error occurred:", error.message);
+      alert(error.response.statusText);
     }
   };
 
   if (redirectToDashboard) {
-    return <Navigate to="/admin/dashboard" replace />;
+    return <Navigate to="/admin/dashboard" />;
   }
 
   return (

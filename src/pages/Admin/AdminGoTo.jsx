@@ -4,7 +4,7 @@ const AdminGoTo = ({path, text}) => {
   const navigate = useNavigate();
 
   const goToBack = () => {
-    navigate(path, { replace: true });
+    navigate(path);
   };
   return <a onClick={goToBack}>{!text ? "Powrót" : text}</a>;
 };

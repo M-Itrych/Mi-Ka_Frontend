@@ -3,6 +3,7 @@ import NavBar from "../components/global/NavBar";
 import NewsTile from "../components/forPages/NewsTile";
 import "./css/News.css";
 import { useEffect, useState } from "react";
+import axios from "axios";
 
 const News = () => {
   const [data, setData] = useState();
@@ -10,12 +11,13 @@ const News = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const res = await fetch("http://127.0.0.1:5000/api/news");
-        if (!res.ok) {
-          throw new Error("Network response was not ok");
+        const response = await axios.get("http://127.0.0.1:5000/api/news");
+
+        if (!response.data) {
+          throw new Error("No data received");
         }
-        const jsonData = await res.json();
-        setData(jsonData);
+
+        setData(response.data);
       } catch (error) {
         console.log(error);
       }

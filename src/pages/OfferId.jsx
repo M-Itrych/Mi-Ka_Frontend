@@ -7,18 +7,20 @@ import { useEffect, useState } from "react";
 
 const OfferId = () => {
   const [data, setData] = useState();
-  
+
   const { id } = useParams();
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const res = await fetch('http://127.0.0.1:5000/api/offers/'+id);
-        if (!res.ok) {
-          throw new Error('Network response was not ok');
+        const response = await axios.get(
+          `http://127.0.0.1:5000/api/offers/${id}`
+        );
+
+        if (!response.data) {
+          throw new Error("No data received");
         }
-        const jsonData = await res.json();
-        
-        setData(jsonData);
+
+        setData(response.data);
       } catch (error) {
         console.log(error);
       }
@@ -31,8 +33,8 @@ const OfferId = () => {
     return <div>Loading...</div>;
   }
 
-  let textParts = data.text.split("<br />")
-  
+  let textParts = data.text.split("<br />");
+
   return (
     <>
       <NavBar />
@@ -41,22 +43,24 @@ const OfferId = () => {
           <img src={data.headerimg.src} alt={data.headerimg.alt} />
           <h1 className="">{data.title}</h1>
           {textParts.map((tpart, i) => (
-            <p key={i} className="offerPage-text">{tpart}</p>
+            <p key={i} className="offerPage-text">
+              {tpart}
+            </p>
           ))}
-          
         </div>
         {data.additions && (
           <div className="offerPage-additions">
             {data.additions.map((e, i) => {
-              if (e.type === "img-text"){
+              if (e.type === "img-text") {
                 return (
-                <ImgText
-                  title={e.title}
-                  text={e.text}
-                  img={e.img}
-                  reverse={!(i % 2)}
-                />
-              )} else return;
+                  <ImgText
+                    title={e.title}
+                    text={e.text}
+                    img={e.img}
+                    reverse={!(i % 2)}
+                  />
+                );
+              } else return;
             })}
           </div>
         )}
