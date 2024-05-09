@@ -47,7 +47,7 @@ const Offer = () => {
               text={e.text}
               img={{ src: e.img.src, alt: e.img.alt }}
               btn={true}
-              bg={index % 2}
+              bg={!(index % 2)}
               reverse={!(index % 2)}
               href={"/offer/" + e._id}
             />

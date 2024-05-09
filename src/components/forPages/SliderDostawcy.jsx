@@ -5,12 +5,9 @@ const SliderDostawcy = () => {
   const settings = {
     dots: false,
     infinite: true,
-    speed: 5000,
     slidesToShow: 5,
-    slidesToScroll: 1,
-    autoplay: true,
-    autoplaySpeed: 0,
-    arrows: false,
+    slidesToScroll: 5,
+    arrows: true,
     cssEase: "linear",
     pauseOnHover: false,
     responsive: [
@@ -18,7 +15,7 @@ const SliderDostawcy = () => {
         breakpoint: 1200,
         settings: {
           slidesToShow: 3,
-          slidesToScroll: 1,
+          slidesToScroll: 3,
           infinite: true,
         },
       },
@@ -26,7 +23,7 @@ const SliderDostawcy = () => {
         breakpoint: 601,
         settings: {
           slidesToShow: 3,
-          slidesToScroll: 1,
+          slidesToScroll: 3,
           infinite: true,
         },
       },
@@ -34,7 +31,7 @@ const SliderDostawcy = () => {
         breakpoint: 481,
         settings: {
           slidesToShow: 2,
-          slidesToScroll: 1,
+          slidesToScroll: 2,
           infinite: true,
         },
       },

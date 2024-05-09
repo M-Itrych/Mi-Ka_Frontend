@@ -1,8 +1,49 @@
 import { useState } from "react";
+import config from "../../config.json";
+import axios from "axios";
 
 const Contact = ({ bg = false }) => {
   const [checked, setChecked] = useState(false);
   const handleClick = () => setChecked(!checked);
+  const [showError, setShowError] = useState();
+  const [showComplete, setShowComplete] = useState();
+
+  const handleSubmit = async (event) => {
+    event.preventDefault();
+
+    const email = document.getElementById("email-address").value;
+    const phone_number = document.getElementById("phone-number").value;
+    const text = document.getElementById("text").value;
+
+    if (!email || !phone_number || !text) {
+      return setShowError("Wypełnij wszystkie pola");
+    }
+    if (!checked) {
+      return setShowError("Zaakceptuj zgodę na przetwarzanie danych");
+    }
+
+    try {
+      const response = await axios.post(
+        `${config.apiUrl}/api/send_email`,
+        {
+          email: email,
+          phone: phone_number,
+          text: text,
+        },
+        {
+          headers: {
+            "Content-Type": "application/json",
+          },
+        }
+      );
+
+      if (response.status === 200) {
+        setShowComplete("Wiadomość wysłana!")
+      }
+    } catch (error) {
+      setShowError("Wystąpił błąd po stronie serwera!")
+    }
+  };
   return (
     <section
       className="contact-wrapper"
@@ -15,7 +56,9 @@ const Contact = ({ bg = false }) => {
             Lorem ipsum dolor sit amet consectetur. Turpis tellus gravida
             habitasse velit mi vitae.{" "}
           </p>
-          <form action="" method="post">
+          {showError && <p className="contact-error">{showError}</p>}
+          {showComplete && <p className="contact-complete">Wiadomość wysłana poprawnie</p>}
+          <form onSubmit={handleSubmit}>
             <div className="contact-input">
               <svg
                 width="18"
@@ -38,7 +81,12 @@ const Contact = ({ bg = false }) => {
                   fill="#F97316"
                 />
               </svg>
-              <input type="text" placeholder="Adres email" id="email-address" />
+              <input
+                type="email"
+                placeholder="Adres email"
+                id="email-address"
+                pattern="^(?!$)[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$"
+              />
             </div>
             <div className="contact-input">
               <svg
@@ -69,15 +117,16 @@ const Contact = ({ bg = false }) => {
                 </defs>
               </svg>
               <input
-                type="text"
+                type="tel"
                 placeholder="Numer Telefonu"
-                id="email-address"
+                id="phone-number"
+                pattern="[0-9]{3}[0-9]{3}[0-9]{3}"
               />
             </div>
 
             <textarea
-              id="w3review"
-              name="w3review"
+              id="text"
+              name="text"
               rows="10"
               cols="50"
               placeholder="Treść wiadomości"
@@ -117,26 +166,31 @@ const Contact = ({ bg = false }) => {
                 każdej chwili mogę cofnąć swoją zgodę.
               </p>
             </div>
-            <button type="submit" className="contact-submit">Wyślij wiadomość</button>
+            <button type="submit" className="contact-submit">
+              Wyślij wiadomość
+            </button>
           </form>
         </div>
         <div className="contact-right">
-            <div className="contact-right-text">
-                <h3>Odwiedz nas</h3>
-                <div className="contact-right-info">
-                    <div className="contact-right-location">
-                        <h4>Mi-Ka sp. z.o.o</h4>
-                        <p>84-241 Gościcino, Kopernika 23</p>
-                    </div>
-                    <div className="contact-right-more">
-                        <p>NIP: 00 00 00 000 00</p>
-                        <p>mail: kontakt@nazwafirmy.pl</p>
-                    </div>
-                </div>
+          <div className="contact-right-text">
+            <h3>Odwiedz nas</h3>
+            <div className="contact-right-info">
+              <div className="contact-right-location">
+                <h4>Mi-Ka sp. z.o.o</h4>
+                <p>84-241 Gościcino, Kopernika 23</p>
+              </div>
+              <div className="contact-right-more">
+                <p>NIP: 00 00 00 000 00</p>
+                <p>mail: kontakt@nazwafirmy.pl</p>
+              </div>
             </div>
-            <div className="contact-right-map">
-                <img src="https://s3-alpha-sig.figma.com/img/005c/b827/23d8590cc005a258927df16f592e7841?Expires=1715558400&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=h8u0odMz396VF7zikc-VEI7R2D-I5LR2mYRIJZDq2Al5Acfe2Z2XSSQwoqJqJpJkEq-FkU7Nd3tisDv-k6rms89s0~7USdYIM1oPct2q2KlZJSz0gSxqwc6nK4~1T3RiiK064RDYDFaIggQsIiOlWg82zBMcZjmlwFK48DMLXNxVBo0RtsUGdVIzWkJMIa70TKiI-Z2L037N6ndXaX2u6AU2djpbY3uwbCgv3fhjmJJvYZTl0W82EzcQ2EKTIQTU02YzsUdjt4nDNMMHvAan7bNacJGXADr4C0~rL78tc~6~oqycaq5t2agFrflmOhJbEB1CqPTwyQiqlhTG0hxaYA__" alt="mika-location-map" />
-            </div>
+          </div>
+          <div className="contact-right-map">
+            <img
+              src="https://s3-alpha-sig.figma.com/img/005c/b827/23d8590cc005a258927df16f592e7841?Expires=1715558400&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=h8u0odMz396VF7zikc-VEI7R2D-I5LR2mYRIJZDq2Al5Acfe2Z2XSSQwoqJqJpJkEq-FkU7Nd3tisDv-k6rms89s0~7USdYIM1oPct2q2KlZJSz0gSxqwc6nK4~1T3RiiK064RDYDFaIggQsIiOlWg82zBMcZjmlwFK48DMLXNxVBo0RtsUGdVIzWkJMIa70TKiI-Z2L037N6ndXaX2u6AU2djpbY3uwbCgv3fhjmJJvYZTl0W82EzcQ2EKTIQTU02YzsUdjt4nDNMMHvAan7bNacJGXADr4C0~rL78tc~6~oqycaq5t2agFrflmOhJbEB1CqPTwyQiqlhTG0hxaYA__"
+              alt="mika-location-map"
+            />
+          </div>
         </div>
       </div>
     </section>

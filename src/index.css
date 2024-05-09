@@ -351,6 +351,18 @@ img {
       gap: var(--Spacing-24PX, 1.5rem);
 
       flex: 1 0 0;
+      .contact-error{
+        font-size: 1rem;
+        text-align: center;
+        align-self: center;
+        color: red;
+      }
+      .contact-complete{
+        font-size: 1rem;
+        text-align: center;
+        align-self: center;
+        color: green;
+      }
       h3 {
         color: var(--base-black, #000);
         max-width: 29rem;

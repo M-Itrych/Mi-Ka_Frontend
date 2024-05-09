@@ -1,6 +1,6 @@
 import AdminGoTo from "./AdminGoTo";
 import axios from "axios";
-import config from '../config.json'
+import config from '../../config.json'
 
 const AdminDashboardNews = () => {
     const handleSubmit = async (event) => {
