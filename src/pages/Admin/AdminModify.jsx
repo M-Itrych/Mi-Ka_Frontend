@@ -5,7 +5,7 @@ import {useEffect, useState} from "react";
 import "../css/Admin/AdminModify.css"
 import AdminNews from "../../components/admin/AdminNews";
 
-const AdminModifyNews = () => {
+const AdminModify = () => {
   const [data, setData] = useState();
   useEffect(() => {
 
@@ -51,4 +51,4 @@ const AdminModifyNews = () => {
   )
 }
 
-export default AdminModifyNews;
+export default AdminModify;

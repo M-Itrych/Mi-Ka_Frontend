@@ -21,7 +21,6 @@ const NewsId = () => {
           throw new Error("No data received");
         }
 
-        console.log(response.data);
         setData(response.data);
       } catch (error) {
         console.log(error);

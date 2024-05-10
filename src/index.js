@@ -9,10 +9,12 @@ import OfferId from "./pages/OfferId";
 import ContactPage from "./pages/ContactPage";
 import About from "./pages/About";
 import AdminLogin from "./pages/Admin/AdminLogin";
-import AdminDashboardNews from "./pages/Admin/AdminDashboardNews";
+import AdminAddNews from "./pages/Admin/AdminAddNews";
 import AdminDashboard from "./pages/Admin/AdminDashboard";
 import NewsId from "./pages/NewsId";
 import PrivateRoutes from "./components/utils/PrivateRoutes";
+import AdminModify from "./pages/Admin/AdminModify";
+import AdminModifyNews from "./pages/Admin/AdminModifyNews";
 
 const App = () => {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
@@ -44,8 +46,16 @@ const App = () => {
             element={<AdminDashboard />}
           />
           <Route
-            path="/admin/dashboard/news"
-            element={<AdminDashboardNews />}
+            path="/admin/dashboard/add_news"
+            element={<AdminAddNews />}
+          />
+          <Route
+            path="/admin/dashboard/modify_news"
+            element={<AdminModify />}
+          />
+          <Route
+            path="/admin/dashboard/modify_news/:id"
+            element={<AdminModifyNews />}
           />
         </Route>
       </Routes>

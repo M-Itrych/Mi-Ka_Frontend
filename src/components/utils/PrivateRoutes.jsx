@@ -1,16 +1,17 @@
 import { Outlet } from "react-router-dom";
 import axios from "axios";
 import { useEffect, useState } from "react";
+import config from "../../config.json"
 
 const PrivateRoutes = () =>{
     const [isLoggedIn, setIsLoggedIn] = useState(false);
 
     useEffect(() => {
-        const token = localStorage.getItem('token');
+        const token = sessionStorage.getItem('token');
         
 
         if (token) {
-            axios.post('http://127.0.0.1:5000/api/authenticate', null,{
+            axios.post(`${config.apiUrl}/api/authenticate`, null,{
                 headers: {
                     Authorization: `${token}`
                 }

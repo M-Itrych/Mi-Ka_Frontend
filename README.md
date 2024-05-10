@@ -3,7 +3,8 @@
 This is a React-based website for Mi-Ka company. It showcases various features of the company including their services, latest news, about section, and contact information.
 
 ## Flask API for this project
-https://github.com/M-Itrych/Mi-Ka_Backend
+Find the corresponding Flask API [here](https://github.com/M-Itrych/Mi-Ka_Backend).
+
 
 ## Features
 

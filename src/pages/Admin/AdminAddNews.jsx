@@ -2,10 +2,10 @@ import AdminGoTo from "./AdminGoTo";
 import axios from "axios";
 import config from '../../config.json'
 
-const AdminDashboardNews = () => {
+const AdminAddNews = () => {
     const handleSubmit = async (event) => {
         event.preventDefault();
-        const authKey = localStorage.getItem('token');
+        const authKey = sessionStorage.getItem('token');
         const formData = new FormData(event.target);
 
         const url = formData.get("url");
@@ -73,4 +73,4 @@ const AdminDashboardNews = () => {
     );
 };
 
-export default AdminDashboardNews;
+export default AdminAddNews;

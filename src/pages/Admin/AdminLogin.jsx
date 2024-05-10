@@ -10,7 +10,7 @@ const AdminLogin = () => {
 
   const handleSubmit = async (event) => {
     event.preventDefault();
-    localStorage.removeItem("token")
+    sessionStorage.removeItem("token")
     const formData = new FormData(event.target);
 
     const login = formData.get("login");
@@ -29,7 +29,7 @@ const AdminLogin = () => {
       );
 
       if (response.status === 200) {
-        localStorage.setItem("token", "Basic " + btoa(login + ":" + password));
+        sessionStorage.setItem("token", "Basic " + btoa(login + ":" + password));
         setRedirectToDashboard(true);
       }
     } catch (error) {
