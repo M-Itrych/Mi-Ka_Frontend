@@ -139,9 +139,9 @@ const AdminModifyNews = () => {
         }
       );
 
-      console.log(response.data);
+      alert("Zaktualizowano!")
+      setInitialData(data)
     } catch (error) {
-      // Handle error
       console.error("Error:", error);
     }
   };
