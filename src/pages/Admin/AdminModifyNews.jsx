@@ -10,6 +10,7 @@ const AdminModifyNews = () => {
   const [isEditingText, setIsEditingText] = useState(false);
   const [isEditingHeader, setIsEditingHeader] = useState(false);
   const [isEditingImg, setIsEditingImg] = useState(false);
+  const [isEditingDescription, setIsEditingDescription] = useState(false);
   const [textParts, setTextParts] = useState([]);
   const textareaRef = useRef(null);
 
@@ -55,6 +56,10 @@ const AdminModifyNews = () => {
     setIsEditingImg(true);
   };
 
+  const handleEditDescriptionClick = () => {
+    setIsEditingDescription(true);
+  };
+
   const handleTextareaChange = (event) => {
     setTextParts(event.target.value.split("\n"));
   };
@@ -86,6 +91,13 @@ const AdminModifyNews = () => {
     }));
   };
 
+  const handleDescriptionChange = (event) => {
+    setData((prevState) => ({
+      ...prevState,
+      desc: event.target.value,
+    }));
+  };
+
   const handleTextSave = () => {
     const updatedText = textParts.join("\n");
     setData((prevData) => ({
@@ -101,6 +113,10 @@ const AdminModifyNews = () => {
 
   const handleImgSave = () => {
     setIsEditingImg(false);
+  };
+
+  const handleDescriptionSave = () => {
+    setIsEditingDescription(false);
   };
 
   useEffect(() => {
@@ -139,8 +155,8 @@ const AdminModifyNews = () => {
         }
       );
 
-      alert("Zaktualizowano!")
-      setInitialData(data)
+      alert("Zaktualizowano!");
+      setInitialData(data);
     } catch (error) {
       console.error("Error:", error);
     }
@@ -195,6 +211,20 @@ const AdminModifyNews = () => {
           </h2>
         )}
         {isEditingHeader && <button onClick={handleHeaderSave}>Save</button>}
+        {isEditingDescription ? (
+          <input
+            type="text"
+            value={data.desc}
+            style={{ width: "100%" }}
+            onChange={handleDescriptionChange}
+            className="admin-modify-input"
+          />
+        ) : (
+          <p className="news-element-header" onClick={handleEditDescriptionClick}>
+            Opis: {data.desc}
+          </p>
+        )}
+        {isEditingDescription && <button onClick={handleDescriptionSave}>Save</button>}
         {isEditingText ? (
           <textarea
             className="news-element-text"
@@ -217,7 +247,7 @@ const AdminModifyNews = () => {
             ))}
           </p>
         )}
-        {isEditingText && <button onClick={handleTextSave}>Save</button>}
+        {isEditingText && <button onClick={handleTextSave}> Save </button>}
         {isDataModified() && <button onClick={sendData}>Send Changes</button>}
       </div>
     </section>
