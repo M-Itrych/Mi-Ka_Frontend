@@ -92,12 +92,10 @@ const Home = () => {
           <div className="home-offers-content">
             <div className="home-offers-text">
               <h2>
-                Nasza Bogata Oferta - Rozwiązania Dla Kompleksowej Hydrauliki
+                Nasza Bogata Oferta
               </h2>
               <p>
-                Odkryj szeroki zakres naszych usług hydrauliki, obejmujący
-                instalacje wodno-kanalizacyjne, klimatyzacje, rekuperacje,
-                kotłownie gazowe i OZE. Solidność i profesjonalizm.
+                Odkryj szeroki zakres naszych usług w hydraulice oraz projektach i nadzorach budowlanych.
               </p>
             </div>
             <div className="home-offers-tiles">

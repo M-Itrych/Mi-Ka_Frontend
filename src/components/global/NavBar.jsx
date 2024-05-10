@@ -1,4 +1,5 @@
 import { useState } from "react";
+import phi_logo from "../../pages/img/phi-logo.png"
 
 const NavBar = () => {
   const [navOpen, setNavOpen] = useState(true)
@@ -45,9 +46,11 @@ const NavBar = () => {
                 />
               </svg>
             </a>
+            <a href="https://www.grupaphi.pl/" target="_blank" rel="noreferrer"><img src={phi_logo} alt="Logo-grupy-phi" /></a>
           </section>
           <section className="nav-bar-links">
             <a href="/about">O firmie</a>
+            <a href="/dostawcy">Dostawcy</a>
             <a href="/offer">Oferta</a>
             <a href="/news">Aktualności</a>
             <a href="/contact">Kontakt</a>
@@ -87,6 +90,7 @@ const NavBar = () => {
         {!navOpen && <section className="nav-bar-mobile">
           <nav className="nav-bar-mobile-links">
             <a href="/about">O firmie</a>
+            <a href="/dostawcy">Dostawcy</a>
             <a href="/offer">Oferta</a>
             <a href="/news">Aktualności</a>
             <a href="/contact">Kontakt</a>

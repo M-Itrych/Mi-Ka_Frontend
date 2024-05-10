@@ -20,19 +20,23 @@ const SliderDostawcy = () => {
         },
       },
       {
-        breakpoint: 601,
-        settings: {
-          slidesToShow: 3,
-          slidesToScroll: 3,
-          infinite: true,
-        },
-      },
-      {
-        breakpoint: 481,
+        breakpoint: 801,
         settings: {
           slidesToShow: 2,
           slidesToScroll: 2,
           infinite: true,
+        },
+      },
+      {
+        breakpoint: 601,
+        settings: {
+          slidesToShow: 1,
+          slidesToScroll: 1,
+          infinite: true,
+          arrows: false,
+          cssEase: "linear",
+          autoplay: true,
+          autoplaySpeed: 2000,
         },
       },
     ],
@@ -121,30 +125,28 @@ const SliderDostawcy = () => {
     <section className="slider-section">
       <h2>Nasi Dostawcy</h2>
       <Slider {...settings}>
-        {dostawcy.map((e) => (
+        {dostawcy.map((e, index) => (
           <div>
             <a
+              key={index} // Remember to add a unique key for each element in the array
               href={e.link}
               target="_blank"
               className="slider-link"
               rel="noreferrer"
               style={{
+                backgroundImage: `url(${process.env.PUBLIC_URL}/dostawcy/${e.url})`,
+                backgroundSize: "contain",
+                backgroundPosition: "center",
+                backgroundRepeat: "no-repeat",
+                padding: "1rem",
                 display: "flex",
                 justifyContent: "center",
                 alignItems: "center",
+                maxHeight: "8rem",
+                height: "7rem",
+                textDecoration: "none", 
               }}
-            >
-              <img
-                src={process.env.PUBLIC_URL + `dostawcy/${e.url}`}
-                alt="placeholder-img"
-                style={{
-                  padding: "1rem",
-                  maxWidth: "100%", // Set maximum width to 100% of its container
-                  maxHeight: "8rem", // Set maximum height to 8rem
-                  objectFit: "contain", // Maintain aspect ratio and contain within the specified dimensions
-                }}
-              />
-            </a>
+            > </a>
           </div>
         ))}
       </Slider>

@@ -15,6 +15,7 @@ import NewsId from "./pages/NewsId";
 import PrivateRoutes from "./components/utils/PrivateRoutes";
 import AdminModify from "./pages/Admin/AdminModify";
 import AdminModifyNews from "./pages/Admin/AdminModifyNews";
+import Dostawcy from "./pages/Dostawcy";
 
 const App = () => {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
@@ -33,6 +34,7 @@ const App = () => {
         <Route path="/offer" element={<Offer />} />
         <Route path="/news" element={<News />} />
         <Route path="/about" element={<About />} />
+        <Route path="/dostawcy" element={<Dostawcy />} />
         <Route path="/contact" element={<ContactPage />} />
         <Route path="/offer/:id" element={<OfferId />} />
         <Route path="/news/:id" element={<NewsId />} />

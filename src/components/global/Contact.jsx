@@ -180,8 +180,8 @@ const Contact = ({ bg = false }) => {
                 <p>84-241 Gościcino, Kopernika 23</p>
               </div>
               <div className="contact-right-more">
-                <p>NIP: 00 00 00 000 00</p>
-                <p>mail: kontakt@nazwafirmy.pl</p>
+                <p>NIP: 588 250 76 88</p>
+                <p>mail: administracja@mi-ka.pl</p>
               </div>
             </div>
           </div>

@@ -35,8 +35,7 @@ const Offer = () => {
         <section className="offer-heading">
           <h1>Oferta</h1>
           <p>
-            Zanurz się w Naszych Wyjątkowych Ofertach: Pełna Gama Usług dla
-            Sprawności i Bezpieczeństwa Twoich Urządzeń!
+            Zanurz się w Naszych Wyjątkowych Ofertach
           </p>
         </section>
         {data &&

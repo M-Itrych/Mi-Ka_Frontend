@@ -174,6 +174,7 @@ img {
   justify-content: center;
   align-items: center;
   flex-shrink: 0;
+  gap: 1rem;
 }
 
 .nav-bar-links {
@@ -272,11 +273,13 @@ img {
 
   .footer-right {
     display: flex;
-    align-items: center;
     gap: 2rem;
-
-    .footer-puck,
-    .footer-goscicino {
+    .footer-centrala {
+      h4 {
+        line-height: 150%;
+      }
+    }
+    .footer-phones {
       display: flex;
       flex-direction: column;
       align-items: flex-start;
@@ -351,13 +354,13 @@ img {
       gap: var(--Spacing-24PX, 1.5rem);
 
       flex: 1 0 0;
-      .contact-error{
+      .contact-error {
         font-size: 1rem;
         text-align: center;
         align-self: center;
         color: red;
       }
-      .contact-complete{
+      .contact-complete {
         font-size: 1rem;
         text-align: center;
         align-self: center;
@@ -446,7 +449,7 @@ img {
           left: 1rem;
           top: 1.2rem;
         }
-        .contact-submit{
+        .contact-submit {
           display: flex;
           border: none;
           cursor: pointer;
@@ -462,7 +465,7 @@ img {
           font-style: normal;
           font-weight: 900;
           line-height: 1.5rem;
-          &:hover{
+          &:hover {
             background: #b85814;
           }
         }
@@ -480,13 +483,13 @@ img {
         width: 1.5rem;
         height: 1.5rem;
         left: 0.25rem;
-        top: 0.20rem;
+        top: 0.2rem;
       }
       input[type="checkbox"] {
         appearance: none;
         -webkit-appearance: none;
         -moz-appearance: none;
-    }
+      }
       .contact-input-btn {
         height: 1.5rem;
         min-width: 1.5rem;
@@ -508,26 +511,26 @@ img {
       }
       p {
         /* word-break: break-all; */
-        font-size: .75rem;
+        font-size: 0.75rem;
         line-height: 1rem;
       }
     }
   }
 }
 
-.contact-right{
+.contact-right {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
   gap: var(--Spacing-48PX, 3rem);
   flex: 1 0 0;
-  .contact-right-text{
+  .contact-right-text {
     display: flex;
     flex-direction: column;
     justify-content: flex-end;
     align-items: flex-start;
     gap: var(--Spacing-48PX, 3rem);
-    h3{
+    h3 {
       color: var(--base-black, #000);
 
       /* H3 */
@@ -538,15 +541,15 @@ img {
       line-height: 2rem; /* 100% */
       letter-spacing: -0.012rem;
     }
-    .contact-right-info{
+    .contact-right-info {
       display: flex;
       flex-direction: row;
       gap: 3rem;
-      .contact-right-location{
+      .contact-right-location {
         display: flex;
         flex-direction: column;
         gap: 1rem;
-        h4{
+        h4 {
           color: var(--p, rgba(15, 23, 42, 0.75));
           font-family: Inter;
           font-size: 1.5rem;
@@ -554,7 +557,7 @@ img {
           font-weight: 400;
           line-height: 1.75rem;
         }
-        p{
+        p {
           color: var(--p, rgba(15, 23, 42, 0.75));
           /* P */
           font-family: Inter;
@@ -564,11 +567,11 @@ img {
           line-height: 1.75rem;
         }
       }
-      .contact-right-more{
+      .contact-right-more {
         display: flex;
         flex-direction: column;
         gap: 1rem;
-        p{
+        p {
           color: var(--p, rgba(15, 23, 42, 0.75));
           /* P */
           font-family: Inter;
@@ -580,8 +583,8 @@ img {
       }
     }
   }
-  .contact-right-map{
-    img{
+  .contact-right-map {
+    img {
       max-width: 100%;
       object-fit: cover;
       max-height: 25rem;
@@ -589,13 +592,13 @@ img {
   }
 }
 
-@media screen and (max-width: 1400px){
-  .contact-wrapper{
+@media screen and (max-width: 1400px) {
+  .contact-wrapper {
     padding: 5rem 5rem;
   }
 }
 @media screen and (max-width: 900px) {
-  .contact-wrapper{
+  .contact-wrapper {
     .contact-content {
       display: grid;
       grid-template-columns: repeat(1, 1fr);
@@ -605,7 +608,7 @@ img {
 }
 
 @media screen and (max-width: 600px) {
-  .contact-wrapper{
+  .contact-wrapper {
     padding: 5rem 1rem;
   }
 }
