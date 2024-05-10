@@ -6,6 +6,10 @@ This is a React-based website for Mi-Ka company. It showcases various features o
 Find the corresponding Flask API [here](https://github.com/M-Itrych/Mi-Ka_Backend).
 
 
+## TODO
+
+Improve UI of admin dashboard
+
 ## Features
 
 - **Home**: Landing page introducing Mi-Ka company and its services.
