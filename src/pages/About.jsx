@@ -8,7 +8,7 @@ const About = () => {
       <NavBar />
       <section className="about-wrapper">
         <div className="about-card">
-          <h2>Mika w Pigułce</h2>
+          <h2>Mi-Ka w Pigułce</h2>
           <p>
             Witaj w świecie Mi-Ka, dynamicznej firmie działającej na rynku od
             2008 roku.
