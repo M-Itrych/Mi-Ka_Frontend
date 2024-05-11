@@ -44,7 +44,7 @@ const AdminAddNews = () => {
         <main className='admin-main'>
             <form id="admin-news-add-form" onSubmit={handleSubmit}>
                 <h2>Dodawanie Aktualności</h2>
-                <AdminGoTo path={"/admin/dashboard/"} />
+                <AdminGoTo path={"/Admin/dashboard/"} />
                 <label htmlFor='url'>
                     <span>Link do zdjęcia</span>
                     <input type='text' name='url' id='url' placeholder="https://imgur.com/" />

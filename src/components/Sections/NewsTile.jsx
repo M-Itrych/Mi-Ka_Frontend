@@ -1,4 +1,4 @@
-import "./css/NewsTile.css";
+import "./NewsTile.css";
 
 const NewsTile = ({img, date, title, desc, href}) => (
     <div className="news-tile">

@@ -1,4 +1,4 @@
-import "./css/ImgText.css"
+import "./ImgText.css"
 
 const ImgText = ({title, text, img, reverse}) => (
     <div className="offerPage-imgtext" style={{flexDirection: (reverse ? "row-reverse" : "row")}}>

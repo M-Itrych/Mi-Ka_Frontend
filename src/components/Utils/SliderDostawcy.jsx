@@ -1,5 +1,5 @@
 import Slider from "react-slick";
-import "./css/SliderDostawcy.css";
+import "./SliderDostawcy.css";
 
 const SliderDostawcy = () => {
   const settings = {

@@ -1,4 +1,4 @@
-import phi_logo from "../../pages/img/phi-logo.png"
+import phi_logo from "../../assets/images/phi-logo.png"
 
 const Footer = () => (
     <section className="footer-section">

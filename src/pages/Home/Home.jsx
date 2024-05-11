@@ -1,14 +1,14 @@
-import HomeOfferTile from "../components/forPages/HomeOfferTile";
-import Footer from "../components/global/Footer";
-import NavBar from "../components/global/NavBar";
-import home_welcome from "./img/home-welcome.png";
-import "./css/Home.css";
-import NewsTile from "../components/forPages/NewsTile";
-import Contact from "../components/global/Contact";
-import SliderDostawcy from "../components/forPages/SliderDostawcy";
+import HomeOfferTile from "../../components/Sections/HomeOfferTile";
+import Footer from "../../components/Footer/Footer";
+import NavBar from "../../components/NavBar/NavBar";
+import home_welcome from "../../assets/images/home-welcome.png";
+import "./Home.css";
+import NewsTile from "../../components/Sections/NewsTile";
+import Contact from "../../components/Contact/Contact";
+import SliderDostawcy from "../../components/Utils/SliderDostawcy";
 import { useState, useEffect } from "react";
 import axios from "axios";
-import config from '../config.json'
+import config from '../../config.json'
 
 const Home = () => {
   const [offers, setOffers] = useState();
@@ -56,7 +56,7 @@ const Home = () => {
                 w realizacji projektów budowlanych.
               </p>
             </div>
-            <a href="/offer">Poznaj ofertę</a>
+            <a href="/Offer">Poznaj ofertę</a>
           </div>
           <img src={home_welcome} alt="brand-color-pipes"></img>
         </section>
@@ -130,7 +130,7 @@ const Home = () => {
                 />
               ))}
           </div>
-          <a href="/news">Przejdź do archiwum</a>
+          <a href="/News">Przejdź do archiwum</a>
         </section>
       </main>
       <SliderDostawcy />

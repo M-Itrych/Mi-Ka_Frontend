@@ -1,6 +1,6 @@
-import Footer from "../components/global/Footer";
-import NavBar from "../components/global/NavBar";
-import "./css/Dostawcy.css"
+import Footer from "../../components/Footer/Footer";
+import NavBar from "../../components/NavBar/NavBar";
+import "./Dostawcy.css"
 
 const Dostawcy = () => {
     const dostawcy = [

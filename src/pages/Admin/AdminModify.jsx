@@ -2,8 +2,8 @@ import AdminGoTo from "./AdminGoTo";
 import axios from "axios";
 import config from '../../config.json'
 import {useEffect, useState} from "react";
-import "../css/Admin/AdminModify.css"
-import AdminNews from "../../components/admin/AdminNews";
+import "./AdminModify.css"
+import AdminNews from "../../components/Admin/AdminNews";
 
 const AdminModify = () => {
   const [data, setData] = useState();

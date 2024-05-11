@@ -1,4 +1,4 @@
-import "./css/OfferComponent.css";
+import "./OfferComponent.css";
 
 const OfferTile = ({
   text,

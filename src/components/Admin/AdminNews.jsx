@@ -34,7 +34,7 @@ const AdminNews = ({img, date, title, desc, id}) => {
       <p className="admin-news-tile-date">{date}</p>
       <h4 className="admin-news-tile-title">{title}</h4>
       <p className="admin-news-tile-desc">{desc}</p>
-      <a className="admin-news-tile-btn" href={"/admin/dashboard/modify_news/"+id}>Modyfikuj Aktualność</a>
+      <a className="admin-news-tile-btn" href={"/Admin/dashboard/modify_news/"+id}>Modyfikuj Aktualność</a>
     </div>
   )
 }

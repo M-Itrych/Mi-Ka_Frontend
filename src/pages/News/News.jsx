@@ -1,10 +1,10 @@
-import Footer from "../components/global/Footer";
-import NavBar from "../components/global/NavBar";
-import NewsTile from "../components/forPages/NewsTile";
-import "./css/News.css";
+import Footer from "../../components/Footer/Footer";
+import NavBar from "../../components/NavBar/NavBar";
+import NewsTile from "../../components/Sections/NewsTile";
+import "./News.css";
 import { useEffect, useState } from "react";
 import axios from "axios";
-import config from '../config.json'
+import config from '../../config.json'
 
 const News = () => {
   const [data, setData] = useState();

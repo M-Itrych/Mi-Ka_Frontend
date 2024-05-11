@@ -1,11 +1,11 @@
-import OfferTile from "../components/forPages/OfferTile";
-import Footer from "../components/global/Footer";
-import NavBar from "../components/global/NavBar";
-import "./css/Offer.css";
-import SliderDostwacy from "../components/forPages/SliderDostawcy";
+import OfferTile from "../../components/Sections/OfferTile";
+import Footer from "../../components/Footer/Footer";
+import NavBar from "../../components/NavBar/NavBar";
+import "./Offer.css";
+import SliderDostwacy from "../../components/Utils/SliderDostawcy";
 import { useEffect, useState } from "react";
 import axios from "axios";
-import config from '../config.json'
+import config from '../../config.json'
 
 const Offer = () => {
   const [data, setData] = useState();

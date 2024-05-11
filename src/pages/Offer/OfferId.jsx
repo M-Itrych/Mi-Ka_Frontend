@@ -1,11 +1,11 @@
 import { useParams } from "react-router-dom";
-import NavBar from "../components/global/NavBar";
-import Footer from "../components/global/Footer";
-import ImgText from "../components/forPages/ImgText";
-import "./css/OfferId.css";
+import NavBar from "../../components/NavBar/NavBar";
+import Footer from "../../components/Footer/Footer";
+import ImgText from "../../components/Sections/ImgText";
+import "./OfferId.css";
 import { useEffect, useState } from "react";
 import axios from "axios";
-import config from '../config.json'
+import config from '../../config.json'
 
 const OfferId = () => {
   const [data, setData] = useState();

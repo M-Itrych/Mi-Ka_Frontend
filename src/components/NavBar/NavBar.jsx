@@ -1,5 +1,5 @@
 import { useState } from "react";
-import phi_logo from "../../pages/img/phi-logo.png"
+import phi_logo from "../../assets/images/phi-logo.png"
 
 const NavBar = () => {
   const [navOpen, setNavOpen] = useState(true)
@@ -49,11 +49,11 @@ const NavBar = () => {
             <a href="https://www.grupaphi.pl/" target="_blank" rel="noreferrer"><img src={phi_logo} alt="Logo-grupy-phi" /></a>
           </section>
           <section className="nav-bar-links">
-            <a href="/about">O firmie</a>
-            <a href="/dostawcy">Dostawcy</a>
-            <a href="/offer">Oferta</a>
-            <a href="/news">Aktualności</a>
-            <a href="/contact">Kontakt</a>
+            <a href="/About">O firmie</a>
+            <a href="/Dostawcy">Dostawcy</a>
+            <a href="/Offer">Oferta</a>
+            <a href="/News">Aktualności</a>
+            <a href="/Contact">Kontakt</a>
             <a href="https://www.facebook.com/p/MI-KA-sp-z-oo-100048134066214/" target="_blank" rel="noopener noreferrer"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-facebook"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg></a>
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -90,10 +90,10 @@ const NavBar = () => {
         </nav>
         {!navOpen && <section className="nav-bar-mobile">
           <nav className="nav-bar-mobile-links">
-            <a href="/about">O firmie</a>
-            <a href="/dostawcy">Dostawcy</a>
-            <a href="/offer">Oferta</a>
-            <a href="/news">Aktualności</a>
+            <a href="/About">O firmie</a>
+            <a href="/Dostawcy">Dostawcy</a>
+            <a href="/Offer">Oferta</a>
+            <a href="/News">Aktualności</a>
             <a href="/contact">Kontakt</a>
           </nav>
         </section>}
